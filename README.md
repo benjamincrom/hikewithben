@@ -5,9 +5,9 @@ Interface
 ---------
 
 ### hikewithben.com/index.html
-- Display a list of all hikes (past and future).  Each hike will receive its own block about 500 pixels high and 
+1. Display a list of all hikes (past and future).  Each hike will receive its own block about 500 pixels high and 
   90% of page width (blog style)
-- Each block will contain the following trip data:
+2. Each block will contain the following trip data:
 ..- date
 ..- location
 ..- distance (mi)
