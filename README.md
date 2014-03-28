@@ -1,4 +1,4 @@
-hikewithben.com design requiqrements
+hikewithben.com design requirements
 ====================================
 
 Interface
