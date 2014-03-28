@@ -10,9 +10,10 @@ Interface
 2. Each block will contain the following trip data:
   * start of hike date and time
   * end of hike date and time
-  * location
-  * distance (mi)
-  * elevation gain (ft)
+  * location name
+  * location longitude and latitude
+  * distance hiked (mi)
+  * total elevation gain for hike (ft)
   * reservation status
   * temperature range
   * weather
@@ -23,8 +24,9 @@ Interface
   * RSVPs for this hike
 3. Link to recommended gear list
 4. Link to recommended reading list
-5. Display goofy animation of Ben hiking in header
+5. Display goofy animation of Ben hiking on page header
 6. Integrate Google Maps/Google Earth with "route" data in block
+7. Automate weather forecast lookup
 
 ### User Capabilities 
 1. Authenticate with Google account (OAuth)
@@ -43,17 +45,16 @@ Interface
   * Email address
 
 * Hike
-  * date
+  * start datetime
+  * end datetime
   * location title
   * location latitude (decimal degree) 
   * location longitude (decimal degree) 
   * hike distance (mi)
   * elevation gain (ft)
   * reservation status
-  * temperature range
-  * weather
   * hazards
-  * route (GPX or KML)
-  * picture locations
+  * route url
+  * picture url
   * notes
-  * users who have RSVP'd hike and their statuses
+  * users who have RSVP'd for this hike and their statuses
