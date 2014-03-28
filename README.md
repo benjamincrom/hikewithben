@@ -58,3 +58,8 @@ Interface
   * picture url
   * notes
   * users who have RSVP'd for this hike and their statuses
+ 
+
+Resources
+---------
+* [Podio](https://podio.com/myorg-pazgmy08ba/hikewithben)
