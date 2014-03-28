@@ -8,7 +8,8 @@ Interface
 1. Display a list of all hikes (past and future).  Each hike will receive its own block about 500 pixels high and 
   90% of page width (blog style)
 2. Each block will contain the following trip data:
-  * date
+  * start of hike date and time
+  * end of hike date and time
   * location
   * distance (mi)
   * elevation gain (ft)
