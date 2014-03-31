@@ -11,7 +11,6 @@ class User(ndb.Model):
 class Hike(ndb.Model):
 	"""Models an invidual hiking expedition"""
 	hike_reservation_status = ndb.StringProperty()
-	hike_weather = ndb.StringProperty()
 	hike_location_name = ndb.StringProperty()
 	hike_hazards = ndb.StringProperty()
 	hike_route_url = ndb.StringProperty()
@@ -19,8 +18,9 @@ class Hike(ndb.Model):
 	hike_notes = ndb.StringProperty()
 	hike_distance = ndb.FloatProperty()
 	hike_location_longitude = ndb.FloatProperty()
-	hike_location_latitude = ndb.StringProperty()
+	hike_location_latitude = ndb.FloatProperty()
 	hike_elevation_gain = ndb.IntegerProperty()
+	hike_total_capacity = ndb.IntegerProperty()
 	hike_start_datetime = ndb.DateTimeProperty()
 	hike_end_datetime = ndb.DateTimeProperty()
 

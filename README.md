@@ -22,6 +22,7 @@ Interface
   * link to pictures (thumbnails?)
   * other notes
   * RSVPs for this hike
+  * number of available spots remaining
 3. Link to recommended gear list
 4. Link to recommended reading list
 5. Display goofy animation of Ben hiking on page header
