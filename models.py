@@ -18,7 +18,7 @@ class Hike(ndb.Model):
     hike_reservation_status = ndb.StringProperty()
     hike_location_name = ndb.StringProperty()
     hike_hazards = ndb.StringProperty()
-    hike_route_url = ndb.StringProperty(	)
+    hike_route_url = ndb.StringProperty(    )
     hike_pictures_url = ndb.StringProperty()
     hike_notes = ndb.StringProperty()
     hike_distance_miles = ndb.FloatProperty()
