@@ -12,7 +12,7 @@ import models
 
 ENTRY_REQUEST_RESOURCE_CONTAINER = endpoints.ResourceContainer(
     message_types.VoidMessage,
-    hike_id=messages.StringField(2, required=True)
+    hike_id=messages.IntegerField(2, required=True)
 )
 
 LIST_REQUEST_RESOURCE_CONTAINER = endpoints.ResourceContainer(
@@ -53,6 +53,7 @@ class HikeWithBenApi(remote.Service):
     def get_hike_message_from_query_obj(cls, query_obj):
         # Get hike data into message object
         this_hike_message = models.HikeMessage(
+            hike_id=query_obj.key.id(),
             hike_reservation_status=query_obj.hike_reservation_status,
             hike_location_name=query_obj.hike_location_name,
             hike_hazards=query_obj.hike_hazards,
