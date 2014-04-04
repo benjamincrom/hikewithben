@@ -4,6 +4,9 @@ hikewithben.com design requirements
 Interface
 ---------
 
+### List all hikes API: https://hikewithben.appspot.com/_ah/api/hikewithben/v1/hike_list
+### Lookup individual hike API: https://hikewithben.appspot.com/_ah/api/hikewithben/v1/hike_display/{hike_id}
+
 ### hikewithben.com/index.html
 1. Display a list of all hikes (past and future).  Each hike will receive its own block about 500 pixels high and 
   90% of page width (blog style)
