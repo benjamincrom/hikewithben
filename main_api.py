@@ -31,7 +31,7 @@ class HikeWithBenApi(remote.Service):
                       name="hike.listHikes")
     def list_hikes(self, request):
         hike_message_collection_obj = models.HikeMessageCollection(hike_list=[])
-        hike_query = models.Hike.query().order(Hike.hike_start_datetime)
+        hike_query = models.Hike.query().order(models.Hike.hike_start_datetime)
 
         for this_query in hike_query.iter():
             hike_message_collection_obj.hike_list.append(
