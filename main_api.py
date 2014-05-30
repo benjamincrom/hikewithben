@@ -24,26 +24,27 @@ LIST_REQUEST_RESOURCE_CONTAINER = endpoints.ResourceContainer(
 class HikeWithBenApi(remote.Service):
     """Concierge API v1."""
     @staticmethod
-    @endpoints.method(LIST_REQUEST_RESOURCE_CONTAINER, 
+    @endpoints.method(LIST_REQUEST_RESOURCE_CONTAINER,
                       models.HikeMessageCollection,
-                      path="hike_list", 
-                      http_method="GET", 
+                      path="hike_list",
+                      http_method="GET",
                       name="hike.listHikes")
     def list_hikes(self, request):
         hike_message_collection_obj = models.HikeMessageCollection(hike_list=[])
-        hike_query = models.Hike.query()
+        hike_query = models.Hike.query().order(Hike.hike_start_datetime)
+
         for this_query in hike_query.iter():
             hike_message_collection_obj.hike_list.append(
                 self.get_hike_message_from_query_obj(this_query)
-            )        
+            )
 
         return hike_message_collection_obj
 
     @staticmethod
-    @endpoints.method(ENTRY_REQUEST_RESOURCE_CONTAINER, 
+    @endpoints.method(ENTRY_REQUEST_RESOURCE_CONTAINER,
                       models.HikeMessage,
-                      path="hike_display/{hike_id}", 
-                      http_method="GET", 
+                      path="hike_display/{hike_id}",
+                      http_method="GET",
                       name="hike.displayHike")
     def display_hike(self, request):
         hike_obj = models.Hike.get_by_id(request.hike_id)

@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 
-from google.appengine.ext import ndb 
+from google.appengine.ext import ndb
 from protorpc import messages, message_types
 
 
@@ -18,7 +18,7 @@ class Hike(ndb.Model):
     hike_reservation_status = ndb.StringProperty()
     hike_location_name = ndb.StringProperty()
     hike_hazards = ndb.StringProperty()
-    hike_route_url = ndb.StringProperty(    )
+    hike_route_url = ndb.StringProperty()
     hike_pictures_url = ndb.StringProperty()
     hike_notes = ndb.StringProperty()
     hike_distance_miles = ndb.FloatProperty()
@@ -61,6 +61,7 @@ class HikeMessage(messages.Message):
     hike_start_datetime = message_types.DateTimeField(13)
     hike_end_datetime = message_types.DateTimeField(14)
     rsvp_yes_list = messages.MessageField(PersonNameMessage, 15, repeated=True)
+
 
 class HikeMessageCollection(messages.Message):
     """Message for containing a list of HikeMessage objects"""
