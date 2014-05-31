@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-
+import datetime
 import endpoints
 
 from protorpc import message_types
@@ -51,6 +51,16 @@ class HikeWithBenApi(remote.Service):
         return self.get_hike_message_from_query_obj(hike_obj)
 
     @classmethod
+    def convert_datetime_to_str(cls, datestring):
+        if datestring:
+            this_datetime = datetime.datetime.strptime(str(datestring), "%Y-%m-%d %H:%M:%S")
+            formatted_str = this_datetime.strftime('%A, %d %B %Y')
+        else:
+            formatted_str = ''
+
+        return formatted_str
+
+    @classmethod
     def get_hike_message_from_query_obj(cls, query_obj):
         # Get hike data into message object
         this_hike_message = models.HikeMessage(
@@ -68,6 +78,8 @@ class HikeWithBenApi(remote.Service):
             hike_total_capacity=query_obj.hike_total_capacity,
             hike_start_datetime=query_obj.hike_start_datetime,
             hike_end_datetime=query_obj.hike_end_datetime,
+            hike_start_datestring=cls.convert_datetime_to_str(query_obj.hike_start_datetime),
+            hike_end_datestring=cls.convert_datetime_to_str(query_obj.hike_end_datetime),
         )
 
         return this_hike_message
