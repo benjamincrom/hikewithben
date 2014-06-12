@@ -59,6 +59,10 @@ class HikeWithBenApi(remote.Service):
             formatted_str = ''
 
         return formatted_str
+    
+    @classmethod
+    def is_date_in_future(cls, given_datetime):
+        return given_datetime > datetime.datetime.now()
 
     @classmethod
     def get_hike_message_from_query_obj(cls, query_obj):
@@ -77,6 +81,7 @@ class HikeWithBenApi(remote.Service):
             hike_elevation_gain=query_obj.hike_elevation_gain,
             hike_total_capacity=query_obj.hike_total_capacity,
             hike_start_datetime=query_obj.hike_start_datetime,
+            hike_in_future=cls.is_date_in_future(query_obj.hike_start_datetime),
             hike_end_datetime=query_obj.hike_end_datetime,
             hike_start_datestring=cls.convert_datetime_to_str(query_obj.hike_start_datetime),
             hike_end_datestring=cls.convert_datetime_to_str(query_obj.hike_end_datetime),

@@ -60,9 +60,10 @@ class HikeMessage(messages.Message):
     hike_location_latitude = messages.FloatField(12)
     hike_elevation_gain = messages.IntegerField(13)
     hike_total_capacity = messages.IntegerField(14)
-    hike_start_datetime = message_types.DateTimeField(15)
-    hike_end_datetime = message_types.DateTimeField(16)
-    rsvp_yes_list = messages.MessageField(PersonNameMessage, 17, repeated=True)
+    hike_in_future = messages.BooleanField(15)
+    hike_start_datetime = message_types.DateTimeField(16)
+    hike_end_datetime = message_types.DateTimeField(17)
+    rsvp_yes_list = messages.MessageField(PersonNameMessage, 18, repeated=True)
 
 
 class HikeMessageCollection(messages.Message):
