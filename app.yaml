@@ -12,12 +12,13 @@ handlers:
 inbound_services:
 - warmup
 
-automatic_scaling:
-  min_idle_instances: 3
-  max_idle_instances: 995
-
 libraries:
 - name: pycrypto
   version: latest
 - name: endpoints
   version: 1.0
+
+automatic_scaling:
+  min_idle_instances: 3
+  max_idle_instances: 995
+
