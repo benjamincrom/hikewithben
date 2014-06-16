@@ -9,6 +9,9 @@ handlers:
 - url: /_ah/spi/.*
   script: main_api.api_application
 
+inbound_services:
+- warmup
+
 libraries:
 - name: pycrypto
   version: latest
