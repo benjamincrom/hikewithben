@@ -9,9 +9,6 @@ handlers:
 - url: /_ah/spi/.*
   script: main_api.api_application
 
-- url: /.*
-  script: ingest.ingest_application
-
 libraries:
 - name: pycrypto
   version: latest
