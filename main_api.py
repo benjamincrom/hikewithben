@@ -9,6 +9,7 @@ from protorpc import remote
 
 import models
 
+# I am adding some comments here for the hackathon
 
 ENTRY_REQUEST_RESOURCE_CONTAINER = endpoints.ResourceContainer(
     message_types.VoidMessage,
@@ -19,6 +20,7 @@ LIST_REQUEST_RESOURCE_CONTAINER = endpoints.ResourceContainer(
     message_types.VoidMessage,
 )
 
+# MOAR Comments!!!
 
 @endpoints.api(name="hikewithben", version="v1")
 class HikeWithBenApi(remote.Service):
